@@ -15,7 +15,7 @@ LL(1)
 
 ## Parser
 
-(     parser    )
+(     parser    )  
 Tokens -> Tree -> Compiler / Interpreter
 
 

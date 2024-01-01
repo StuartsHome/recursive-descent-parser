@@ -39,10 +39,20 @@ const char *cursor;
 char string[64];
 int peek;
 
+void block(void);
 void error(const char*);
+int expect(Symbol s);
 void expression(void);
 
 #define is_num(c) ((c) >= '0' && (c) <= '9')
+
+int main() {
+	sym = beginsym;
+	block();
+	expect(period);
+
+	return 0;
+}
 
 void nextsym(void) {
 	peek = getchar();
@@ -191,14 +201,6 @@ void block(void) {
 		expect(semicolon);
 	}
 	statement();
-}
-
-int main() {
-	sym = beginsym;
-	statement();
-	expect(period);
-
-	return 0;
 }
 
 // 1+2*3+1;
